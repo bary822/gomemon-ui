@@ -23,7 +23,7 @@ export class GomemonMemoClient {
 
     const json = await response.json();
     const memos = new Array<Memo>
-    json.Memos.forEach(m => {
+    json.Memos.forEach((m: { ID: string; Content: string; }) => {
       const memo = new Memo(m.ID, m.Content);
       memos.push(memo);
     });
