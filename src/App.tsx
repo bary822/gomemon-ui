@@ -41,6 +41,7 @@ function CreateMemo({setMemos}: { setMemos: React.Dispatch<React.SetStateAction<
       await GomemonMemoClient.createMemo(content);
       const fetchedMemos = await GomemonMemoClient.getAllMemos();
       setMemos(fetchedMemos);
+      setInput('');
     }
   });
 
