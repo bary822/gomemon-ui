@@ -116,7 +116,7 @@ function MemoEditableContent({index, memo, setMemos}: { index: number, memo: Mem
           ></textarea>
         ) : (
           // 通常表示モードの場合
-          <span>{memo.content}</span>
+          <span style={{whiteSpace: 'pre-line', textAlign: 'left'}}>{memo.content}</span>
         )}
         <div>
           {isEditing === memo.id ? (
