@@ -1,6 +1,6 @@
 import { Memo } from "../types/memo";
 
-const API_URL_BASE = "http://localhost:8080"
+const API_URL_BASE = import.meta.env.PROD ? "http://api.gomemon.bary822.me:8080" : "http://localhost:8080"
 
 export class GomemonMemoClient {
   public static async getMemoById(id: string): Promise<Memo> {
