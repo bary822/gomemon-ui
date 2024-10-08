@@ -49,7 +49,7 @@ function CreateMemo({setMemos}: { setMemos: React.Dispatch<React.SetStateAction<
     <>
       <div className="mb-3">
         <textarea
-          className="form-control"
+          className="form-control w-100"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="ここにメモを書く..."
@@ -110,7 +110,7 @@ function MemoEditableContent({index, memo, setMemos}: { index: number, memo: Mem
         {isEditing === memo.id ? (
           // 編集モードの場合
           <textarea
-            className="form-control me-3"
+            className="form-control me-1"
             value={editInput}
             onChange={(e) => setEditInput(e.target.value)}
             rows={3}
@@ -124,34 +124,28 @@ function MemoEditableContent({index, memo, setMemos}: { index: number, memo: Mem
             // 編集モードで表示されるボタン
             <>
               <button
-                className="btn btn-success me-2"
+                className="btn btn-success"
                 onClick={() => saveMemo()}
               >
-                保存
-              </button>
-              <button
-                className="btn btn-secondary"
-                onClick={() => setIsEditing(null)}
-              >
-                キャンセル
+                <i className="bi bi-check"></i>
               </button>
             </>
           ) : (
             // 通常モードで表示されるボタン
-            <>
+            <div className='btn-group'>
               <button
                 className="btn btn-warning me-2"
                 onClick={() => editMemo()}
               >
-                編集
+                <i className="bi bi-pencil"></i>
               </button>
               <button
                 className="btn btn-danger"
                 onClick={() => deleteMemo()}
               >
-                削除
+                <i className="bi bi-trash"></i>
               </button>
-            </>
+            </div>
           )}
         </div>
       </div>
