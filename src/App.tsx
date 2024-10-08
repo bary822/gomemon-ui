@@ -162,8 +162,12 @@ function MemoEditableContent({index, memo, setMemos}: { index: number, memo: Mem
 function App() {
   return (
     <div className='container text-center'>
-      <Logo imagePath={logoUrl} />
-      <MemoWrapper />
+      <div className='row justify-content-center'>
+        <div className='col'>
+          <Logo imagePath={logoUrl} />
+          <MemoWrapper />
+        </div>
+      </div>
     </div>
   )
 }
