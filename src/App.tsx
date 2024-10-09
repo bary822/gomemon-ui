@@ -70,7 +70,7 @@ function MemoList({memos, setMemos}: { memos: Memo[], setMemos: React.Dispatch<R
         <p className="text-muted">メモがありません。作成してみましょう!</p>
       ): (
         memos.map((memo, index) => (
-          <MemoEditableContent index={index} memo={memo} setMemos={setMemos} />
+          <MemoEditableContent key={memo.id} index={index} memo={memo} setMemos={setMemos} />
         ))
       )}
     </div>
